@@ -1,9 +1,7 @@
-do
-    local DiamondLib = game:GetService("CoreGui"):FindFirstChild("Diamond [Atomic Lib]")
+local DiamondLib = game:GetService("CoreGui"):FindFirstChild("Diamond [Atomic Lib]")
     if DiamondLib then
         DiamondLib:Destroy()
     end
-end
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
