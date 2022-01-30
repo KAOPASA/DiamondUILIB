@@ -78,7 +78,7 @@ end
 local create = {}
 
 
-function create:Win()
+function create:Window()
 
     local fs = false 
     local currentservertoggled = ""
