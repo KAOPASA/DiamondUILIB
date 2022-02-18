@@ -1,5 +1,3 @@
-repeat task.wait() until game:IsLoaded()
-
 if game.CoreGui:FindFirstChild("UILIB") then
 	game.CoreGui:FindFirstChild("UILIB"):Destroy()
 end
@@ -46,24 +44,25 @@ end
 local uis = game:GetService("UserInputService")
 local tween = game:GetService("TweenService")
 
-local uilib = {}
+UILIB = Instance.new("ScreenGui")
+UILIB.Name = "UILIB"
+UILIB.Parent = game.Players:WaitForChild("CoreGui")
+UILIB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-function uilib:lib()
-local UILIB = Instance.new("ScreenGui")
+local create = {}
+
+function create:Win(xname)
+
 local Win = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local TopBack = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local TopUI = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
-local Diamondlogo = Instance.new("ImageLabel")
-local DiamondText = Instance.new("TextLabel")
+local logo = Instance.new("ImageLabel")
+local nametext = Instance.new("TextLabel")
 local Exit = Instance.new("ImageButton")
 local Framelist = Instance.new("Folder")
-
-UILIB.Name = "UILIB"
-UILIB.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-UILIB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Win.Name = "Win"
 Win.Parent = UILIB
@@ -92,27 +91,27 @@ TopUI.Size = UDim2.new(1, 0, 0.0624119379, 0)
 UICorner_3.CornerRadius = UDim.new(0, 2)
 UICorner_3.Parent = TopUI
 
-Diamondlogo.Name = "Diamondlogo"
-Diamondlogo.Parent = TopUI
-Diamondlogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Diamondlogo.BackgroundTransparency = 1.000
-Diamondlogo.Position = UDim2.new(-0.0036477563, 0, -0.142771393, 0)
-Diamondlogo.Size = UDim2.new(0.0800702348, 0, 1.21660864, 0)
-Diamondlogo.Image = "http://www.roblox.com/asset/?id=8494716354"
+logo.Name = "logo"
+logo.Parent = TopUI
+logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+logo.BackgroundTransparency = 1.000
+logo.Position = UDim2.new(-0.0036477563, 0, -0.142771393, 0)
+logo.Size = UDim2.new(0.0800702348, 0, 1.21660864, 0)
+logo.Image = "http://www.roblox.com/asset/?id=8494716354"
 
-DiamondText.Name = "DiamondText"
-DiamondText.Parent = Win
-DiamondText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-DiamondText.BackgroundTransparency = 1.000
-DiamondText.Position = UDim2.new(0.0782039091, 0, 0.0100338468, 0)
-DiamondText.Size = UDim2.new(0.538377881, 0, 0.0359653793, 0)
-DiamondText.Font = Enum.Font.Code
-DiamondText.Text = "XCEL HUB PREMEUIM"
-DiamondText.TextColor3 = Color3.fromRGB(53, 255, 215)
-DiamondText.TextScaled = true
-DiamondText.TextSize = 14.000
-DiamondText.TextWrapped = true
-DiamondText.TextXAlignment = Enum.TextXAlignment.Left
+nametext.Name = "nametext"
+nametext.Parent = Win
+nametext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+nametext.BackgroundTransparency = 1.000
+nametext.Position = UDim2.new(0.0782039091, 0, 0.0100338468, 0)
+nametext.Size = UDim2.new(0.538377881, 0, 0.0359653793, 0)
+nametext.Font = Enum.Font.Code
+nametext.Text = xname
+nametext.TextColor3 = Color3.fromRGB(53, 255, 215)
+nametext.TextScaled = true
+nametext.TextSize = 14.000
+nametext.TextWrapped = true
+nametext.TextXAlignment = Enum.TextXAlignment.Left
 
 Exit.Name = "Exit"
 Exit.Parent = Win
